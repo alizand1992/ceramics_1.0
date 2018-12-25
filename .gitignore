@@ -32,3 +32,5 @@
 
 Gemfile.lock
 *~
+
+db/schema.rb
