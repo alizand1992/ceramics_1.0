@@ -26,7 +26,23 @@
           </li>
         </ul>
       </div>
+
+      <div class="collapse navbar-collapse" id="user">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= form_tag destroy_user_session_path, method: :delete do %>
+                <%= submit_tag :logout, class: "btn btn-danger" %>
+              <% end %>
+            <% else %>
+              <%= link_to "Log In", new_user_session_path, class: "btn btn-success" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </nav>
+
+    <br />
 
     <%= yield %>
   </body>
